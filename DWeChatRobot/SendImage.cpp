@@ -10,49 +10,52 @@
 #define DeleteSendImageCacheCallOffset (0x78757780 - 0x786A0000)
 
 /*
-* 外部调用时传递的参数结构
-* wxid：保存wxid的地址
-* imagepath：保存图片绝对路径的地址
-*/
+ * 外部调用时传递的参数结构
+ * wxid：保存wxid的地址
+ * imagepath：保存图片绝对路径的地址
+ */
 #ifndef USE_SOCKET
-struct ImageParamStruct {
-	DWORD wxid;
-	DWORD imagepath;
+struct ImageParamStruct
+{
+    DWORD wxid;
+    DWORD imagepath;
 };
 #endif
 
 /*
-* 供外部调用的发送图片消息接口
-* lpParamStruct：ImageParamStruct类型结构体指针
-* return：void
-*/
+ * 供外部调用的发送图片消息接口
+ * lpParamStruct：ImageParamStruct类型结构体指针
+ * return：void
+ */
 #ifndef USE_SOCKET
-void SendImageRemote(LPVOID lpParamStruct) {
-	ImageParamStruct* params = (ImageParamStruct*)lpParamStruct;
-	SendImage((WCHAR*)params->wxid, (WCHAR*)params->imagepath);
+void SendImageRemote(LPVOID lpParamStruct)
+{
+    ImageParamStruct *params = (ImageParamStruct *)lpParamStruct;
+    SendImage((WCHAR *)params->wxid, (WCHAR *)params->imagepath);
 }
 #endif
 
 /*
-* 发送图片消息的具体实现
-* receiver：接收人wxid
-* ImagePath：图片绝对路径
-* return：void
-*/
-void __stdcall SendImage(wchar_t* receiver, wchar_t* ImagePath) {
-	DWORD WeChatWinBase = GetWeChatWinBase();
-	DWORD SendImageCall1 = WeChatWinBase + SendImageCall1Offset;
-	DWORD SendImageCall2 = WeChatWinBase + SendImageCall2Offset;
-	DWORD SendImageCall3 = WeChatWinBase + SendImageCall3Offset;
-	DWORD DeleteSendImageCacheCall = WeChatWinBase + DeleteSendImageCacheCallOffset;
-	char nullbuffer[0x50] = { 0 };
-	char buffer[0x3B0] = { 0 };
-	WxBaseStruct pReceiver(receiver);
-	WxBaseStruct pImagePath(ImagePath);
-	WxString nullStruct = { 0 };
-	DWORD tempeax = 0;
-	
-	__asm {
+ * 发送图片消息的具体实现
+ * receiver：接收人wxid
+ * ImagePath：图片绝对路径
+ * return：void
+ */
+void __stdcall SendImage(wchar_t *receiver, wchar_t *ImagePath)
+{
+    DWORD WeChatWinBase = GetWeChatWinBase();
+    DWORD SendImageCall1 = WeChatWinBase + SendImageCall1Offset;
+    DWORD SendImageCall2 = WeChatWinBase + SendImageCall2Offset;
+    DWORD SendImageCall3 = WeChatWinBase + SendImageCall3Offset;
+    DWORD DeleteSendImageCacheCall = WeChatWinBase + DeleteSendImageCacheCallOffset;
+    char nullbuffer[0x50] = {0};
+    char buffer[0x3B0] = {0};
+    WxBaseStruct pReceiver(receiver);
+    WxBaseStruct pImagePath(ImagePath);
+    WxString nullStruct = {0};
+    DWORD tempeax = 0;
+
+    __asm {
 		pushad;
 		call SendImageCall1;
 		sub esp, 0x14;
@@ -72,5 +75,5 @@ void __stdcall SendImage(wchar_t* receiver, wchar_t* ImagePath) {
 		lea ecx, buffer;
 		call DeleteSendImageCacheCall;
 		popad;
-	}
+    }
 }

@@ -1,4 +1,4 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-int SendFile(DWORD pid,wchar_t* wxid, wchar_t* filepath);
+int SendFile(DWORD pid, wchar_t *wxid, wchar_t *filepath);

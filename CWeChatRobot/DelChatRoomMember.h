@@ -1,5 +1,5 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-BOOL DelChatRoomMember(DWORD pid,wchar_t* chatroomid, wchar_t* wxid);
-BOOL DelChatRoomMember(DWORD pid,wchar_t* chatroomid, SAFEARRAY* psaValue);
+BOOL DelChatRoomMember(DWORD pid, wchar_t *chatroomid, wchar_t *wxid);
+BOOL DelChatRoomMember(DWORD pid, wchar_t *chatroomid, SAFEARRAY *psaValue);

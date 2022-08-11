@@ -1,8 +1,8 @@
 #pragma once
-#include<windows.h>
-wstring __stdcall GetUserInfoByWxId(wchar_t* wxid);
-wchar_t* __stdcall GetUserNickNameByWxId(wchar_t* wxid);
-void* __stdcall SearchContactByNet(wchar_t* keyword);
+#include <windows.h>
+wstring __stdcall GetUserInfoByWxId(wchar_t *wxid);
+wchar_t *__stdcall GetUserNickNameByWxId(wchar_t *wxid);
+void *__stdcall SearchContactByNet(wchar_t *keyword);
 void UnHookSearchContact();
 
 #ifndef USE_SOCKET

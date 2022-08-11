@@ -1,4 +1,4 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-BOOL SetChatRoomName(DWORD pid,wchar_t* chatroomid, wchar_t* name);
+BOOL SetChatRoomName(DWORD pid, wchar_t *chatroomid, wchar_t *name);

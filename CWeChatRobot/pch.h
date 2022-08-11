@@ -10,7 +10,7 @@
 // 添加要在此处预编译的标头
 #include "framework.h"
 
-#endif //PCH_H
+#endif // PCH_H
 #include <iostream>
 #include "stdlib.h"
 #include <tchar.h>
@@ -43,7 +43,7 @@ using namespace std;
 #define TEXTLENGTH TEXTLENGTHW
 #endif
 
-BOOL isFileExists_stat(string& name);
+BOOL isFileExists_stat(string &name);
 DWORD GetWeChatRobotBase(DWORD pid);
 DWORD GetWeChatWinBase(DWORD pid);
 DWORD GetWeChatPid();
@@ -57,5 +57,5 @@ tstring GetWeChatInstallDir();
 DWORD GetWeChatVerInt();
 tstring GetWeChatVerStr();
 DWORD StartWeChat();
-BOOL CloseProcessHandle(DWORD pid, wchar_t* handlename);
+BOOL CloseProcessHandle(DWORD pid, wchar_t *handlename);
 DWORD GetRemoteProcAddr(DWORD pid, LPWSTR modulename, LPSTR procname);

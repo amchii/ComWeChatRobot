@@ -1,5 +1,5 @@
 #pragma once
-WxFriendStruct* __stdcall GetFriendList();
+WxFriendStruct *__stdcall GetFriendList();
 
 #ifndef USE_SOCKET
 extern "C" __declspec(dllexport) DWORD GetFriendListRemote();

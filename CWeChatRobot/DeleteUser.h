@@ -1,4 +1,4 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-BOOL DeleteUser(DWORD pid,wchar_t* wxid);
+BOOL DeleteUser(DWORD pid, wchar_t *wxid);

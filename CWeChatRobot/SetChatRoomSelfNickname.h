@@ -1,4 +1,4 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-BOOL SetChatRoomSelfNickname(DWORD pid,wchar_t* chatroomid, wchar_t* nickname);
+BOOL SetChatRoomSelfNickname(DWORD pid, wchar_t *chatroomid, wchar_t *nickname);

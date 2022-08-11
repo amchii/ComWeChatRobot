@@ -1,4 +1,4 @@
 #pragma once
-#include<windows.h>
+#include <windows.h>
 
-int SendImage(DWORD pid,wchar_t* wxid, wchar_t* imagepath);
+int SendImage(DWORD pid, wchar_t *wxid, wchar_t *imagepath);

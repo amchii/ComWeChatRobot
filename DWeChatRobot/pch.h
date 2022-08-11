@@ -9,12 +9,12 @@
 
 // 添加要在此处预编译的标头
 #include "framework.h"
-#include<iostream>
-#include<vector>
-#include<strstream>
+#include <iostream>
+#include <vector>
+#include <strstream>
 #include "wxdata.h"
 #include "wxapi.h"
-#endif //PCH_H
+#endif // PCH_H
 
 #ifdef USE_SOCKET
 #include "wxsocketapi.h"

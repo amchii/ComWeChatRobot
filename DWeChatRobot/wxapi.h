@@ -30,20 +30,20 @@
 #include "GetChatRoomMemberNickname.h"
 
 using namespace std;
-#pragma comment(lib,"version.lib")
-#pragma warning(disable:4731)
+#pragma comment(lib, "version.lib")
+#pragma warning(disable : 4731)
 // 对于导出函数，需要使用此宏修饰
 #define DLLEXPORT extern "C" __declspec(dllexport)
 
 BOOL CreateConsole(void);
 DWORD GetWeChatWinBase();
-void Wchar_tToString(std::string& szDst, wchar_t* wchar);
-string UTF8ToGBK(const std::string& strUTF8);
-void HookAnyAddress(DWORD dwHookAddr, LPVOID dwJmpAddress, char* originalRecieveCode);
-void UnHookAnyAddress(DWORD dwHookAddr, char* originalRecieveCode);
+void Wchar_tToString(std::string &szDst, wchar_t *wchar);
+string UTF8ToGBK(const std::string &strUTF8);
+void HookAnyAddress(DWORD dwHookAddr, LPVOID dwJmpAddress, char *originalRecieveCode);
+void UnHookAnyAddress(DWORD dwHookAddr, char *originalRecieveCode);
 DLLEXPORT void UnHookAll();
 wstring wreplace(wstring source, wchar_t replaced, wstring replaceto);
 void PrintProcAddr();
-wchar_t* GetTimeW(long long timestamp);
+wchar_t *GetTimeW(long long timestamp);
 BOOL ProcessIsWeChat();
-BOOL FindOrCreateDirectory(const wchar_t* pszPath);
+BOOL FindOrCreateDirectory(const wchar_t *pszPath);
