@@ -1,3 +1,5 @@
+Forked from https://github.com/ljc545w/ComWeChatRobot, 但是会有一些自己的更改放在该分支如果PR没有被接受的话。[upstream](https://github.com/amchii/ComWeChatRobot/tree/upstream)分支将和ljc545w/ComWeChatRobot:master保持一致。
+
 # 描述
 PC微信机器人，实现以下功能：
 1. 获取通讯录  
