@@ -28,5 +28,5 @@ int SendEmotion(DWORD pid, wchar_t *wxid, wchar_t *img_path)
         return 1;
     }
     DWORD dwRet = CallRemoteFunction(hp.GetHandle(), SendEmitonRemoteAddr, r_params.GetAddr());
-    return (dwRet != 1);
+    return (dwRet != 0);
 }

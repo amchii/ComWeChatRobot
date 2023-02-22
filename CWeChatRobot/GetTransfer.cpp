@@ -23,5 +23,5 @@ int GetTransfer(DWORD pid, wchar_t *wxid, wchar_t *transcationid, wchar_t *trans
     if (!r_param.GetAddr() || !r_wxid.GetAddr() || !r_transcationid.GetAddr() || !r_transferid.GetAddr())
         return 1;
     DWORD dwRet = CallRemoteFunction(hp.GetHandle(), GetTransferRemoteAddr, r_param.GetAddr());
-    return (dwRet != 1);
+    return (dwRet != 0);
 }

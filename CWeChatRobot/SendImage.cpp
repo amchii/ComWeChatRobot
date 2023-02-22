@@ -28,5 +28,5 @@ int SendImage(DWORD pid, wchar_t *wxid, wchar_t *imagepath)
         return 1;
     }
     DWORD dwRet = CallRemoteFunction(hp.GetHandle(), SendImageRemoteAddr, r_params.GetAddr());
-    return (dwRet != 1);
+    return (dwRet != 0);
 }

@@ -30,5 +30,5 @@ BOOL SendXmlMsg(DWORD pid, wchar_t *wxid, wchar_t *xml, wchar_t *imgpath)
         return 1;
     }
     DWORD dwRet = CallRemoteFunction(hp.GetHandle(), SendXmlMsgRemoteAddr, r_params.GetAddr());
-    return dwRet != 1;
+    return (dwRet != 0);
 }
